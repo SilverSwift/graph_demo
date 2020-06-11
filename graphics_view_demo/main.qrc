@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/logo.png</file>
+        <file>icons/pause.png</file>
+        <file>icons/start.png</file>
+        <file>icons/stop.png</file>
+        <file>demo_ru.qm</file>
+    </qresource>
+</RCC>
