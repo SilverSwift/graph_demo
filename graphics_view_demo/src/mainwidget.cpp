@@ -2,6 +2,7 @@
 
 #include <QHBoxLayout>
 #include <QGraphicsScene>
+#include <QGraphicsItem>
 #include <QGraphicsView>
 #include <QPushButton>
 #include <QThread>
@@ -59,8 +60,10 @@ void MainWidget::init()
 
     connect(generator.data(), &Generator::generated,
             this, [=](const QVector<QPoint> points){
+        view->scene()->clear();
         for (auto point : points)
             view->scene()->addEllipse(QRectF(point, QSize(10, 10)), Qt::NoPen, Qt::gray);
+
     });
     connect(generator.data(), &Generator::runningChanged,
             this, [=](bool running){
